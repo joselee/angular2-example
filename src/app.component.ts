@@ -10,6 +10,6 @@ export class AppComponent implements OnInit {
     constructor(@Inject(FooService) private fooService: FooService){}
 
     ngOnInit() {
-        this.foos = this.fooService.getFoos();
+        this.fooService.getFoos().subscribe(foos => this.foos = foos);
     }
 }
