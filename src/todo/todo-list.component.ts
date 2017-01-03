@@ -17,7 +17,7 @@ export class TodoListComponent implements OnInit {
 
     ngOnInit() {
         this.todoLists = ['All', 'Pending', 'Done'];
-        this.todos = this.todoService.getTodos();
+        this.todoService.getTodos().subscribe(todos => this.todos = todos);
         this.resetNewTodo();
     }
     onKeyUp(e: any) {

@@ -17,7 +17,7 @@ const fuseBox = fsbx.FuseBox.init({
         //fsbx.TypeScriptHelpers,
         fsbx.JSONPlugin(),
         fsbx.HTMLPlugin({ useDefault: false }),
-        // fsbx.UglifyJSPlugin()
+        fsbx.UglifyJSPlugin()
     ]
 });
 
@@ -26,7 +26,7 @@ gulp.task('fusebox', () => {
 });
 
 gulp.task('index', () => {
-    return gulp.src('src/index.html').pipe(gulp.dest('dist'));
+    return gulp.src(['src/index.html', 'todos.json']).pipe(gulp.dest('dist'));
 });
 gulp.task('watch', ['fusebox', 'index'], () => {
     gulp.watch('src/**/*.**', ['fusebox', 'index']);
