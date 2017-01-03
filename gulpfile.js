@@ -17,7 +17,7 @@ const fuseBox = fsbx.FuseBox.init({
         //fsbx.TypeScriptHelpers,
         fsbx.JSONPlugin(),
         fsbx.HTMLPlugin({ useDefault: false }),
-        fsbx.UglifyJSPlugin()
+        // fsbx.UglifyJSPlugin()
     ]
 });
 
